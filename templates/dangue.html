@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Diabetes Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href={{ url_for('index') }}>Home</a></li>
+				<li><a href={{ url_for('predict_diabetes_endpoint') }}>Diabetes</a></li>
+			</ul>
+		</nav>
+	</header>
+    
+
+	<h1>Diabetes Dengue Form</h1>
+	<form action="{{ url_for('predict_diabetes_endpoint') }}" method="post">
+		<label for="age">Age:</label>
+		<input type="text" id="age" name="age" placeholder="Enter your age.." required>
+
+		<label for="bmi">BMI:</label>
+		<input type="text" id="bmi" name="bmi" placeholder="Enter your BMI.." required>
+
+		<label for="blood_pressure">Blood Pressure:</label>
+		<input type="text" id="blood_pressure" name="blood_pressure" placeholder="Enter your blood pressure.." required>
+
+		<label for="glucose">Glucose:</label>
+		<input type="text" id="glucose" name="glucose" placeholder="Enter your glucose level.." required>
+
+		<button type="submit">Predict</button>
+	</form>
+</body>
